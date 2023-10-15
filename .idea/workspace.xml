@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15080eca-7638-4f4b-82a2-a0490bcc8278" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/Particle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Simulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vector2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="15080eca-7638-4f4b-82a2-a0490bcc8278" name="Changes" comment="Basic sim working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1697319613653</updated>
       <workItem from="1697319614685" duration="1684000" />
-      <workItem from="1697375022464" duration="12844000" />
+      <workItem from="1697375022464" duration="13971000" />
+      <workItem from="1697396833047" duration="313000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -89,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697319790152</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Basic sim working">
+      <option name="closed" value="true" />
+      <created>1697395904305</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697395904305</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,16 +101,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Basic sim working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic sim working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Simulator.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Simulator.java</url>
           <line>15</line>

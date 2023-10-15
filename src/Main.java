@@ -66,7 +66,12 @@ public class Main {
 
         renderUI(rlj);
         rlj.text.DrawFPS(0,0);
-
+        rlj.text.DrawText("Click to select setting", 0, 20, Settings.FONT_SIZE, Color.DARKGRAY);
+        rlj.text.DrawText("Type to edit setting", 0, 40, Settings.FONT_SIZE, Color.DARKGRAY);
+        rlj.text.DrawText("ENTER to confirm", 0, 52, Settings.FONT_SIZE, Color.DARKGRAY);
+        rlj.text.DrawText("C to copy current value", 0, 72, Settings.FONT_SIZE, Color.DARKGRAY);
+        rlj.text.DrawText("Max Density: " + simulator.getMaxDensity(), 0, Settings.HEIGHT - 20,
+                Settings.FONT_SIZE + 8, Color.BROWN);
         rlj.core.EndDrawing();
     }
 
@@ -126,13 +131,41 @@ public class Main {
         UIButton particleSpacingButton = new UIButton(particleSpacingRect, "Spacing: " + Settings.PARTICLE_SPACING, Color.BLUE) {
             @Override
             public void onClick(String text) {
-                int newVal = Integer.parseInt(text);
+                float newVal = Float.parseFloat(text);
                 Settings.PARTICLE_SPACING = newVal;
                 this.text = "Spacing: " + newVal;
                 reset();
             }
         };
         uiButtons.add(particleSpacingButton);
+
+        String pressureTitle = "Pressure Mult: ";
+
+        Rectangle pressureRect = new Rectangle(particleSpacingRect.x, particleSpacingRect.y + 50, Settings.UI_BUTTON_WIDTH + 30, 24);
+        UIButton pressureButton = new UIButton(pressureRect, pressureTitle + Settings.PRESSURE_MULTIPLIER, Color.PURPLE) {
+            @Override
+            public void onClick(String text) {
+                float newVal = Float.parseFloat(text);
+                Settings.PRESSURE_MULTIPLIER = newVal;
+                this.text = pressureTitle + newVal;
+                reset();
+            }
+        };
+        uiButtons.add(pressureButton);
+
+        String densityTitle = "Target Density: ";
+
+        Rectangle densityRect = new Rectangle(pressureRect.x, pressureRect.y + 50, Settings.UI_BUTTON_WIDTH + 30, 24);
+        UIButton densityButton = new UIButton(densityRect, densityTitle + Settings.TARGET_DENSITY, Color.PURPLE) {
+            @Override
+            public void onClick(String text) {
+                float newVal = Float.parseFloat(text);
+                Settings.TARGET_DENSITY = newVal;
+                this.text = densityTitle + newVal;
+                reset();
+            }
+        };
+        uiButtons.add(densityButton);
 
 
         Rectangle resetRect = new Rectangle(marginYRect.x, Settings.HEIGHT - 80, Settings.UI_BUTTON_WIDTH, 24);
@@ -177,6 +210,21 @@ public class Main {
 
         if(rlj.core.IsKeyPressed(Keyboard.KEY_RIGHT_SHIFT)) {
             System.out.println("MaxDensity() = " + simulator.getMaxDensity());
+        }
+
+        // copy
+        if(rlj.core.IsKeyPressed(Keyboard.KEY_C)) {
+            UIButton sb = uiButtons.get(0);
+            for(UIButton uiButton : uiButtons) {
+                if(uiButton.selected(selectedButton)) {
+                    sb = uiButton;
+                }
+            }
+            int startIndex = sb.text.indexOf(':') + 1;
+            System.out.println("sb.text = " + sb.text);
+            System.out.println("startIndex = " + startIndex);
+            if(startIndex == -1) return;
+            uiInput = sb.text.substring(startIndex).strip();
         }
     }
 
